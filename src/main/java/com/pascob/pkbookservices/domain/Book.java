@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,12 +32,28 @@ public class Book {
 	private String urlPageGarde;
 	
 	private String urlBook;
+
+	private Integer nbLike = 0;
+
+	private Integer nbDownload = 0;
 	
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "book_authors",
 		joinColumns = @JoinColumn(name="book_id"),
 		inverseJoinColumns = @JoinColumn(name="author_id"))
 	private Set<Author> authors = new HashSet<>();
+
+	@ManyToOne
+	//@JsonIgnoreProperties(value = "commandes", allowSetters = true)
+	private User user;
+
+	public Book (String title, String synopsis, String urlPageGarde, String urlBook){
+		super();
+		this.title = title;
+		this.synopsis = synopsis;
+		this.urlPageGarde = urlPageGarde;
+		this.urlBook = urlBook;
+	}
 	
 
 }

@@ -23,10 +23,10 @@ public class PkBookServicesApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		if(bookRepository.count() == 0) {
 			List<Book> books = new ArrayList<Book>();
-			books.add(new Book(null, "Apprendre angular", "", "", "", null));
-			books.add(new Book(null, "Apprendre React", "", "", "", null));
-			books.add(new Book(null, "Apprendre Arduino", "", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1TjiB_mqwGL4T5ggTNmtY5I4faI0QidXfpQ&usqp=CAU", "", null));
-			books.add(new Book(null, "Apprendre Laravel", "", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJvizj9dvW3OTKlVty06Qk7xWylplwM3Uw5A&usqp=CAU", "", null));
+			books.add(new Book("Apprendre angular", "", "", ""));
+			books.add(new Book("Apprendre React", "", "", ""));
+			books.add(new Book("Apprendre Arduino", "", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1TjiB_mqwGL4T5ggTNmtY5I4faI0QidXfpQ&usqp=CAU", ""));
+			books.add(new Book("Apprendre Laravel", "", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJvizj9dvW3OTKlVty06Qk7xWylplwM3Uw5A&usqp=CAU", ""));
 			
 			bookRepository.saveAll(books);
 		}

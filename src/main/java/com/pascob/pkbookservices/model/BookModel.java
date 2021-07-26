@@ -16,8 +16,9 @@ public class BookModel extends RepresentationModel<BookModel>{
 	public BookModel(final Book book) {
 		this.book = book;
 		final long id = book.getId();
-		add(WebMvcLinkBuilder.linkTo(BookController.class).withRel("people"));
+		//add(WebMvcLinkBuilder.linkTo(BookController.class).withRel("people"));
 		add(WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(BookController.class).get(id)).withSelfRel());
+		//add(WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(BookController.class).getUser(id)).withRel("user"));
 		
 	}
 

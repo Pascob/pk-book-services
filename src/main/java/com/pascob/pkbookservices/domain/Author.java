@@ -18,6 +18,5 @@ public class Author {
 	private Long id;
 	
 	private String author;
-	
 
 }
