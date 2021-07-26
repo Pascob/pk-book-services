@@ -1,8 +1,8 @@
 package com.pascob.pkbookservices.model;
 
-import com.pascob.pkbookservices.domain.User;
-
 import org.springframework.hateoas.RepresentationModel;
+
+import com.pascob.pkbookservices.domain.User;
 
 import lombok.Getter;
 
