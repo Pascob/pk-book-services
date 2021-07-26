@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.pascob.pkbookservices.model.AuthorModel;
 import com.pascob.pkbookservices.model.BookModel;
-import com.pascob.pkbookservices.model.UserModel;
 import com.pascob.pkbookservices.repository.BookRepository;
 
 @RestController
@@ -35,9 +35,9 @@ public class BookController {
 		return null;
 	}
 
-	/* @GetMapping("/{id}/user")
-	public ResponseEntity<UserModel> getUser(@PathVariable Long id){
+	@GetMapping("/{id}/authors")
+	public ResponseEntity<AuthorModel> getAuthor(@PathVariable Long id){
 		return null;
-	} */
+	}
 
 }
